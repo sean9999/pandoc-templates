@@ -1,0 +1,142 @@
+@charset utf-8;
+@font-face {
+	font-family: "WC ROUGHTRAD Bta";
+	font-style: normal;
+	font-weight: normal;
+	src: url(WC_RoughTrad.otf);
+}
+a {
+	text-decoration: none;
+}
+h1 {
+	font-family: "WC ROUGHTRAD Bta";
+	margin: auto;
+	text-align: center;
+	color: #333;
+}
+h1:not(.subtitle) {
+	page-break-before: always;
+}
+section:not([id]), h2.author {
+	text-align: center !important;
+}
+section:not([id]) h1.title {
+  font-size: xx-large;
+}
+section:not([id]) h1.subtitle {
+	font-family: Baskerville;
+	font-style: italic;
+	font-weight: normal;
+	font-size: x-large;
+	margin-bottom: 2em;
+}
+section:not([id]) h1.title:after {
+	content: attr(x-random-letter);
+	font-family: "Bodoni Ornaments";
+	margin: 36pt;
+	display: block;
+	font-size: 92pt;
+}
+.firstpage {
+	text-align: center;
+}
+h1:not(.subtitle):after {
+	content: attr(x-random-letter);
+	font-family: "Bodoni Ornaments";
+	margin: 12pt;
+	display: block;
+	font-size: 52pt;
+}
+h2, h3, h4, h5 {
+	margin-bottom: 0;
+	font-family: "Didot";
+}
+blockquote {
+	margin: 0;
+	padding: 2em 2em 1em 2em;
+	border-top-color: #8fb59c;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-bottom-color: #8fb59c;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	text-align: justify;
+	font-style: oblique;
+	font-family: Baskerville;
+	page-break-inside: avoid;
+}
+blockquote cite {
+	display: block;
+	text-align: right;
+	color: #813a26;
+	margin: .5em 0;
+}
+blockquote cite:before {
+	content: "— ";
+}
+a:hover {
+	text-decoration: underline !important;
+	color: black !important;
+}
+h2, .toc > li {
+	color: #54a992 !important;
+}
+.toc li {
+	list-style-type: disc !important;
+}
+.toc a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.toc li li li {
+    font-size: smaller;
+}
+h3, .toc li ul li {
+  color: #d94c3a !important;
+}
+h4, .toc li ul li ul li {
+  color: #813a26 !important;
+}
+p {
+  margin-top: 0;
+}
+pre.sourceCode {
+	page-break-inside: avoid;
+	padding-left: 1em;
+}
+code {
+	color: #d94c3a;
+	font-family: monospace;
+}
+figure {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+figcaption {
+  font-family: Baskerville;
+  text-align: center;
+  font-style: italic;
+  color: #813a26;
+}
+img {
+  max-width: inherit;
+  margin: 0;
+  padding: 0;
+}
+.footnotes {
+   font-size: xx-small;
+   text-align: left;
+}
+hr {
+  padding: 0;
+  border: none;
+	border-top-color: #8fb59c;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-bottom-color: #8fb59c;
+	width: 75%;
+}
+.footnotes ol li {
+ text-align: left;
+}
