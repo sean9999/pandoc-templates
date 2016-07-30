@@ -1,4 +1,20 @@
 body {
-    color: red;
-    background-color: green;
+    color: black;
+    background-color: #def;
+    margin: 1em auto;
+    min-width: 450px;
+    width: 66%;
+    border: 1px dotted gray;
+}
+
+h1 {
+    color: purple;
+}
+
+h2 {
+    color: green;
+}
+
+h3 {
+    color: blue;
 }
