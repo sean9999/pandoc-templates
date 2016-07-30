@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=letter,fontsize=11pt]{$documentclass$}
+
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}                    % Saving trees
+    \headheight=-10px
+    \headsep=0px
+    \marginparwidth=0px
+    \textheight=740px
+    \textwidth=460px
+    \hoffset=-23px
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tgtermes}
+\usepackage{tgbonum}
+
+\usepackage{float}
+\usepackage{wrapfig}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%                      % Change font of \section command
+    \usefont{OT1}{qbk}{b}{n}%       % qbk-b-n: TeX Gyre Bonum Bold
+    \sectionrule{0pt}{0pt}{-8pt}{3.5pt}}
+
+
+\newlength{\spacebox}
+\settowidth{\spacebox}{88888888888}          % Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}       % Vertical space macro
+
+\definecolor{dark-grey}{gray}{0}
+
+% TeX Gyre Bonum bold
+\newcommand{\BonumBold}[1]{\usefont{OT1}{qbk}{b}{n} #1}
+% TeX Gyre Bonum
+\newcommand{\Bonum}[1]{\usefont{OT1}{qbk}{n}{n} #1}
+% TeX Gyre Termes
+\newcommand{\Termes}[1]{\usefont{OT1}{cmr}{m}{n} #1}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\newcommand{\MyName}[1]{ % Name
+        \Huge \BonumBold{\hfill #1}
+        \par \normalsize \normalfont}
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+        \large \Termes{\hfill \textit{#1}}
+        \par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\lowercase{#1}}}
+
+
+\begin{document}
+
+\begin{wrapfigure}{l}{0.17\textwidth}
+   \vspace*{-2em}
+    \includegraphics[width=0.17\textwidth]{$logo$}
+\end{wrapfigure}
+
+\MyName{$title$}
+\MySlogan{$subtitle$}
+
+\sepspace
+\sepspace
+\sepspace
+
+\NewPart{}{}
+
+$body$
+
+\end{document}

@@ -202,7 +202,7 @@ $if(dir)$
 \fi
 $endif$
 
-\def\abstractname{{\it Abstract}}
+\renewcommand{\abstractname}{\vspace{-\baselineskip}}
 
 $for(header-includes)$
 $header-includes$
@@ -231,7 +231,9 @@ $if(title)$
 $endif$
 $if(abstract)$
 \begin{abstract}
-$abstract$
+\setlength{\parskip}{1\baselineskip}
+\noindent
+\textit{$abstract$}
 \end{abstract}
 $endif$
 

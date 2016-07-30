@@ -1,0 +1,162 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=$paper$,fontsize=$fontsize$]{scrartcl} % KOMA-article class
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}                    % Saving trees
+    \headheight=-10px
+    \headsep=0px
+    \marginparwidth=0px
+    \textheight=740px
+    \textwidth=460px
+    \hoffset=-23px
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tgtermes}
+\usepackage{tgbonum}
+
+%\usepackage{float}
+\usepackage{wrapfig}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+%\sectionfont{
+% \usefont{OT1}{phv}{b}{n}%       % bch-b-n: CharterBT-Bold font
+%  \sectionrule{0pt}{0pt}{-5pt}{3.5pt}}
+
+\sectionfont{%                      % Change font of \section command
+    \usefont{OT1}{qbk}{b}{n}%       % qbk-b-n: TeX Gyre Bonum Bold
+    \sectionrule{0pt}{0pt}{-5pt}{3.5pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{$spacebox$}          % Box to align text
+\newcommand{\sepspace}{\vspace*{0.75em}}       % Vertical space macro
+
+\definecolor{dark-grey}{gray}{0}
+
+% TeX Gyre Bonum bold
+\newcommand{\BonumBold}[1]{\usefont{OT1}{qbk}{b}{n} #1}
+% TeX Gyre Bonum
+\newcommand{\Bonum}[1]{\usefont{OT1}{qbk}{n}{n} #1}
+% TeX Gyre Termes
+\newcommand{\Termes}[1]{\usefont{OT1}{cmr}{m}{n} #1}
+
+\newcommand{\MyName}[1]{ % Name
+        \Huge \BonumBold{\hfill #1}
+        \par \normalsize \normalfont}
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+        \large \Termes{\hfill \textit{#1}}
+        \par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\lowercase{#1}}}
+
+\newcommand{\DeobfsAddr}[6]{{#1}{#5}{#4}{#3}{#2}{#6}}
+
+\newcommand{\intro}[1]{
+  \setlength{\parindent}{0em}
+  \setlength{\parskip}{0.75em}
+  \Bonum{\footnotesize\noindent #1}
+  \setlength{\parskip}{0em}
+  \normalsize
+}
+
+
+\newcommand{\PersonalEntry}[2]{
+        \noindent\hangindent=2em\hangafter=0 % Indentation
+        \parbox{\spacebox}{        % Box to align text
+        \textit{#1}}               % Entry name (address, email, etc.)
+        \hspace{2em}{\color{dark-grey}\footnotesize #2 }\par} % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+        \noindent\hangindent=2em\hangafter=0 % Indentation
+        \parbox{\spacebox}{        % Box to align text
+        \textit{#1}}               % Entry name
+        \parbox[t][4em]{12.5cm}{%
+          \noindent\hangindent=2em\hangafter=0{%
+          \footnotesize #2}}%      %Entry value
+        \normalsize \par}
+
+\newcommand{\EducationEntry}[4]{
+        \noindent \textbf{#1} \hfill        % Study
+        \colorbox{Black}{%
+          \makebox(100,10){%
+            \color{White}\textbf{#2}}} \par % Duration
+        \noindent \textit{#3} \par          % School
+        \noindent\hangindent=2em\hangafter=0 {%
+          \color{dark-grey}%
+          \Bonum{\footnotesize #4}}%        % Description
+        \normalsize \par}
+
+\newcommand{\WorkEntry}[4]{                 % Same as \EducationEntry
+        \noindent \textbf{#1} \hfill        % Jobname
+        \colorbox{Black}{%
+          \makebox(100,10){%
+            \color{White}\textbf{#2}}} \par % Duration
+        \noindent \textit{#3} \par          % Company
+        \noindent\hangindent=2em\hangafter=0{%
+          \color{dark-grey}%
+          \Bonum{\footnotesize #4}}%        % Description
+        \normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%   \vspace*{-2em}
+%       \includegraphics[width=0.16\textwidth]{$image$}
+%\end{wrapfigure}
+
+\MyName{$myname$}
+\MySlogan{$myslogan$}
+%\MySlogan{\footnotesize{\href{mailto:sean@seanmacdonald.ca}{sean@seanmacdonald.ca}}}
+
+%%% Personal details
+%%% ------------------------------------------------------------
+%\NewPart{}{}
+
+%\PersonalEntry{Twitter}
+%{\href{https://twitter.com/code\_monk}{@code\_monk}}
+%\PersonalEntry{Github}
+%  {\href{https://github.com/sean9999}{github.com/sean9999}}
+%\PersonalEntry{Keybase}
+% {\href{https://keybase.io/code_monk}{keybase.io/code\_monk}}
+%\PersonalEntry{Email}
+% {\href{mailto:\DeobfsAddr{sean}{}{.com}{coding}{crazyhorse}{}}
+% {\DeobfsAddr{sean}{}{.com}{coding}{@crazyhorse}{}}}
+%\PersonalEntry{SO}
+%  {\href{http://stackoverflow.com/cv/code_monk}{stackoverflow.com/cv/code\_monk}}  
+%\PersonalEntry{Code Eval}
+%  {\href{https://www.codeeval.com/profile/sean9999}{www.codeeval.com/profile/sean9999}}
+%\PersonalEntry{PGP}
+% {\href{https://keybase.io/code_monk}
+% {B526710CC2735665E7EF655A455B20A97C6B0A7F}}
+
+$body$
+
+%%% References
+%%% ------------------------------------------------------------
+%\NewPart{References}{}
+%\hspace{0.6cm} \textit{Available upon request}
+
+\end{document}
