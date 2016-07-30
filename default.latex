@@ -1,4 +1,8 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
@@ -68,8 +72,8 @@ $endif$
 $if(author-meta)$
             pdfauthor={$author-meta$},
 $endif$
-$if(keywords)$
-            pdfkeywords={$for(keywords)$$keywords$$sep$; $endfor$},
+$if(meta.keywords)$
+            pdfkeywords={$for(meta.keywords)$$meta.keywords$$sep$; $endfor$},
 $endif$
 $if(colorlinks)$
             colorlinks=true,
@@ -221,6 +225,7 @@ $for(include-before)$
 $include-before$
 
 $endfor$
+
 $if(toc)$
 {
 $if(colorlinks)$
@@ -230,6 +235,7 @@ $endif$
 \tableofcontents
 }
 $endif$
+
 $if(lot)$
 \listoftables
 $endif$
