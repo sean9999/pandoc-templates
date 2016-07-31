@@ -1,7 +1,7 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
 % https://github.com/alecjacobson/coloremoji.sty
-\usepackage{coloremoji}
+%\usepackage{coloremoji}
 
 % to support wrapping text around images
 \usepackage{wrapfig}
