@@ -7,7 +7,7 @@
 % Date: July 2011
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[paper=letter,fontsize=11pt]{$documentclass$}
+\documentclass[paper=$papersize$,fontsize=$fontsize$]{$documentclass$}
 
 \setlength{\parskip}{\baselineskip}
 \setlength{\parindent}{0pt}
@@ -42,7 +42,7 @@
 
 \sectionfont{%                      % Change font of \section command
     \usefont{OT1}{qbk}{b}{n}%       % qbk-b-n: TeX Gyre Bonum Bold
-    \sectionrule{0pt}{0pt}{-8pt}{3.5pt}}
+    \sectionrule{0pt}{0pt}{-8pt}{2pt}}
 
 
 \newlength{\spacebox}
@@ -81,10 +81,6 @@
 
 \MyName{$title$}
 \MySlogan{$subtitle$}
-
-\sepspace
-\sepspace
-\sepspace
 
 \NewPart{}{}
 

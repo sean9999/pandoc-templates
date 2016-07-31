@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html$if(lang)$ lang="$lang$"$endif$>
+<html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
@@ -10,9 +10,14 @@ $endfor$
 $if(date-meta)$
   <meta name="dcterms.date" content="$date-meta$">
 $endif$
-  <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
-  <script src="ornaments.js" defer></script>
+$if(keywords)$
+  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$">
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
   <style type="text/css">code{white-space: pre;}</style>
+$if(quotes)$
+  <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+$endif$
 $if(highlighting-css)$
   <style type="text/css">
 $highlighting-css$
@@ -24,6 +29,9 @@ $endfor$
 $if(math)$
   $math$
 $endif$
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 $for(header-includes)$
   $header-includes$
 $endfor$

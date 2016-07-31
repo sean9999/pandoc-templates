@@ -1,0 +1,32 @@
+\documentclass{scrartcl}
+
+% tables
+\usepackage{longtable,booktabs}
+\usepackage{makecell}
+\usepackage{floatrow}
+\floatsetup[table]{font=small}
+
+%	format headings and sections
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{*4}{4pt}
+\titlespacing*{\subsection}{0pt}{*4}{2pt}
+\titlespacing\subsubsection{0pt}{*4}{2pt}
+\titlespacing\paragraph{0pt}{*4}{2pt}
+\setkomafont{title}{\color{gray}\normalfont\bfseries}
+\setkomafont{subtitle}{\color{atomictangerine}\normalfont\bfseries}
+\setcounter{secnumdepth}{0}
+
+%	format paragraphs
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\title{Expert Profile}
+\author{Sean Macdonald}
+
+%\maketitle
+
+$body$
+
+\end{document}

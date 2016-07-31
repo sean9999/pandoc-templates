@@ -1,0 +1,105 @@
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+$if(fontfamily)$
+\usepackage{$fontfamily$}
+$else$
+\usepackage{lmodern}
+$endif$
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}       % front image
+\usepackage{hyperref}       % links and email
+\usepackage[english]{babel} % linebreaks for english words
+\usepackage{eurosym}
+\usepackage{pbox}           % linebreaks in tables
+
+%	tweak headings
+\usepackage{xcolor}
+\usepackage{titlesec}
+
+\usepackage{framed,color}
+
+\titlespacing*{\section}{0pt}{*4}{4pt}
+\titlespacing*{\subsection}{0pt}{*4}{2pt}
+\titleformat{\section}
+	{\color{teal}\Large\bfseries}
+	{\color{teal}\thesection}{1em}{}
+\titleformat{\subsection}
+	{\color{violet}\large\bfseries}
+	{\color{violet}\thesection}{1em}{}
+
+%	make em big
+%\titleformat*{\section}{\LARGE\bfseries}
+%\titleformat*{\subsection}{\Large\bfseries}
+
+%	remove numbering
+\setcounter{secnumdepth}{0}
+
+%	change section names
+\addto{\captionsenglish}{\renewcommand{\abstractname}{Executive Summary}}
+
+% footnotes in tables
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+
+% auto update years
+\usepackage{datenumber}
+\newcounter{dateone}
+\newcounter{datetwo}
+\newcommand{\difftoday}[3]{%
+      \setmydatenumber{dateone}{\the\year}{\the\month}{\the\day}%
+      \setmydatenumber{datetwo}{#1}{#2}{#3}%
+      \addtocounter{datetwo}{-\thedateone}%
+      \the\numexpr-\thedatetwo/365\relax
+}
+
+$if(tables)$
+\usepackage{longtable,booktabs}
+$endif$
+$if(graphics)$
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+$endif$
+
+% opening
+\title{$title$}
+\author{$author$}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \maketitle
+    \thispagestyle{empty}   % discard page number
+    \includegraphics[width=3.3cm]{assets/chc.jpg}
+    \vfill
+    {\raggedright
+    Sean Macdonald\\
+    Consulting Technical Architect\\
+    Crazy Horse Coding\\
+    1-332 Rusholme Rd\\
+    \href{mailto:sean@crazyhorsecoding.com}{sean@crazyhorsecoding.com}\\
+    }
+\end{titlepage}
+
+\begin{abstract}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+\noindent
+$abstract$
+\end{abstract}
+
+\pagebreak
+\tableofcontents
+\pagebreak
+
+$body$
+
+\end{document}
