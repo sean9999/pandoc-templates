@@ -1,8 +1,9 @@
 \documentclass[$papersize$,$fontsize$]{$documentclass$}
 
-\name{$myname$} % To be used for the return address on the envelope
+%\name{$myname$} % To be used for the return address on the envelope
 %\signature{$signature$} % Goes after the closing (ie at the end of the letter, with space for a signature)
-\address{$senderaddress$}
+%\address{$myname$}
+%\address{$senderaddress$}
 % Alternatively, these may be set on an individual basis within each letter environment.
 
 %\makelabels % this command prints envelope labels on the final page of the document
